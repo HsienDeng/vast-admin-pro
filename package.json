@@ -1,0 +1,47 @@
+{
+  "name": "vast-admin-pro",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host --open",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.58.5",
+    "@vue/runtime-dom": "^3.4.15",
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/shared": "^10.7.2",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "vue": "^3.3.11",
+    "vue-router": "^4.0.13",
+    "vue-types": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.21.1",
+    "naive-ui": "^2.37.3",
+    "postcss": "^8.4.33",
+    "prettier": "^3.2.4",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "typescript": "^5.2.2",
+    "unocss": "^0.58.5",
+    "vite": "^5.0.8",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-tsc": "^1.8.25"
+  }
+}
