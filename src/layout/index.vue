@@ -1,17 +1,25 @@
 <script setup lang="ts">
-  import { useDesignSettingStore } from '@/store/modules';
-  import LayoutSide from './Menu/index.vue';
-  import LayoutHeader from './Header/index.vue';
+  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import LayoutSide from './components/Side/index.vue';
+  import LayoutHeader from './components/Header/index.vue';
 
   const layoutHeaderStyle = 'height: 56px;';
-  const layoutContentStyle = 'padding: 10px;height:100%';
+  const layoutContentStyle = 'padding: 10px; height:100%';
   const designSetting = useDesignSettingStore();
 </script>
 
 <template>
   <n-layout has-sider position="absolute" class="h-full">
-    <n-layout-sider :collapsed="true" :native-scrollbar="false" bordered>
-      <LayoutSide />
+    <n-layout-sider
+      :collapsed="designSetting.collapsed"
+      :native-scrollbar="false"
+      bordered
+      :collapsed-width="64"
+      show-trigger
+      collapse-mode="width"
+      @update:collapsed="(event) => (designSetting.collapsed = event)"
+    >
+      <LayoutSide :collapsed="designSetting.collapsed" />
     </n-layout-sider>
     <n-layout>
       <n-layout-header bordered :style="layoutHeaderStyle">

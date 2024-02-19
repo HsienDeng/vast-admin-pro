@@ -1,27 +1,32 @@
-import { store } from '@/store';
-import { ref } from 'vue';
 import { defineStore } from 'pinia';
+import { store } from '@/store';
+
+interface DesignSettingState {
+  // Menu collapsed
+  collapsed: boolean;
+  // Dark theme
+  darkTheme: boolean;
+}
 
 /**
+ * Project setting store
  * @name useDesignSettingStore
  */
-const useDesignSettingStore = defineStore('app-design-setting', () => {
-  // 菜单是否展开
-  const collapse = ref(false);
-
-  const setCollapse = (bol: boolean) => {
-    collapse.value = bol;
-  };
-
-  return {
-    collapse,
-    setCollapse,
-  };
+export const useDesignSettingStore = defineStore({
+  id: 'app-design-setting',
+  state: (): DesignSettingState => {
+    return {
+      collapsed: false,
+      darkTheme: false,
+    };
+  },
+  persist: {
+    key: 'app-design-setting',
+    storage: localStorage,
+  },
 });
 
-export default useDesignSettingStore;
-
-// 需要在安装程序之外使用
+// With out use function
 export function useDesignSettingWithOut() {
   return useDesignSettingStore(store);
 }

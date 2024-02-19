@@ -15,7 +15,7 @@
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "pinia": "^2.1.7",
-    "pinia-plugin-persist": "^1.0.0",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
     "vue": "^3.3.11",

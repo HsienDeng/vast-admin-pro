@@ -1,3 +1,22 @@
+import { h } from 'vue';
+import SvgIcon from '@/components/SvgIcon';
+
+/**
+ * 动态渲染图标
+ * @param iconName
+ * @returns
+ */
+function renderIcon(iconName: string) {
+  return () =>
+    h(
+      SvgIcon,
+      {
+        name: iconName,
+      },
+      { default: null },
+    );
+}
+
 /**
  * 递归组装菜单格式
  */
@@ -10,9 +29,9 @@ export function generatorMenu(routerMap: Array<any>) {
     const info = isRoot ? item.children[0] : item;
     const currentMenu = {
       ...info,
-      label: info.meta?.title,
       key: info.name,
-      icon: info.meta?.icon,
+      label: info.meta?.title,
+      icon: renderIcon(info.meta?.icon),
     };
     // 是否有子菜单，并递归处理
     if (currentMenu.children && currentMenu.children.length > 0) {

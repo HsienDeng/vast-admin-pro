@@ -1,6 +1,12 @@
 <template>
-  <Logo />
-  <n-menu :value="selectedKeys" :collapsed="collapsed" :options="menuOptions" @update:value="clickMenuItem" />
+  <Logo :collpased="collapsed" />
+  <n-menu
+    :value="selectedKeys"
+    :collapsed="collapsed"
+    :collapsed-width="64"
+    :options="menuOptions"
+    @update:value="clickMenuItem"
+  />
 </template>
 
 <script setup lang="ts">
@@ -8,12 +14,15 @@
   import { useRouter, useRoute } from 'vue-router';
   import routes from '@/router/routers.ts';
   import { generatorMenu } from '@/adapter/menu.ts';
-  import Logo from '@/layout/Logo';
+  import Logo from './Logo';
+
+  defineProps<{
+    collapsed: boolean;
+  }>();
 
   const router = useRouter();
   const currentRoute = useRoute();
   const selectedKeys = ref<string>(currentRoute.name as string);
-  const collapsed = ref(false);
 
   // 监听路由变化
   router.afterEach((value) => {
@@ -30,3 +39,4 @@
 </script>
 
 <style scoped lang="scss"></style>
+./Logo

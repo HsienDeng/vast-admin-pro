@@ -1,5 +1,7 @@
 import { computed, defineComponent, toRefs } from 'vue';
 
+import './style.css';
+
 /**
  * @description: 图标组件
  * @name: Hyun
@@ -18,11 +20,6 @@ export default defineComponent({
       type: String,
       default: '',
     },
-    // 线条颜色
-    color: {
-      type: String,
-      default: '#333',
-    },
     // 如果设置了，鼠标移入将会设置该颜色
     hoverColor: {
       type: String,
@@ -31,7 +28,12 @@ export default defineComponent({
     // 填充颜色
     fill: {
       type: String,
-      default: '#FFF',
+      default: 'none',
+    },
+    // 线条颜色, 没有设置就默认 currentColor
+    color: {
+      type: String,
+      default: 'none',
     },
     // 图标大小
     size: {
@@ -40,17 +42,20 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { size, name, color, fill } = toRefs(props);
+    const { size, name, fill, color } = toRefs(props);
 
-    const symbolId = `#icon-${name.value}`;
+    let symbolId = `#icon-${name.value}`;
     const svgKey = computed(() => {
-      return `${name.value}_${color.value}_${size.value}`;
+      symbolId = `#icon-${name.value}`;
+      return `${name.value}_${size.value}`;
     });
 
     return () => (
-      <svg aria-hidden="true" key={svgKey.value} width={size.value} height={size.value}>
-        <use xlinkHref={symbolId} fill={fill.value} stroke={color.value} />
-      </svg>
+      <div class="svg-icon">
+        <svg aria-hidden="true" key={svgKey.value} width={size.value} height={size.value}>
+          <use xlinkHref={symbolId} stroke={color.value} fill={fill.value} />
+        </svg>
+      </div>
     );
   },
 });

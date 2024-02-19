@@ -26,9 +26,9 @@ dependencies:
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.3.3)(vue@3.4.15)
-  pinia-plugin-persist:
-    specifier: ^1.0.0
-    version: 1.0.0(pinia@2.1.7)(vue@3.4.15)
+  pinia-plugin-persistedstate:
+    specifier: ^3.2.1
+    version: 3.2.1(pinia@2.1.7)
   unplugin-auto-import:
     specifier: ^0.17.5
     version: 0.17.5(@vueuse/core@10.7.2)
@@ -3448,19 +3448,12 @@ packages:
     requiresBuild: true
     optional: true
 
-  /pinia-plugin-persist@1.0.0(pinia@2.1.7)(vue@3.4.15):
-    resolution: {integrity: sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==}
+  /pinia-plugin-persistedstate@3.2.1(pinia@2.1.7):
+    resolution: {integrity: sha512-MK++8LRUsGF7r45PjBFES82ISnPzyO6IZx3CH5vyPseFLZCk1g2kgx6l/nW8pEBKxxd4do0P6bJw+mUSZIEZUQ==}
     peerDependencies:
-      '@vue/composition-api': ^1.0.0
       pinia: ^2.0.0
-      vue: ^2.0.0 || >=3.0.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
     dependencies:
       pinia: 2.1.7(typescript@5.3.3)(vue@3.4.15)
-      vue: 3.4.15(typescript@5.3.3)
-      vue-demi: 0.12.5(vue@3.4.15)
     dev: false
 
   /pinia@2.1.7(typescript@5.3.3)(vue@3.4.15):
@@ -4379,21 +4372,6 @@ packages:
       evtd: 0.2.4
       vue: 3.4.15(typescript@5.3.3)
     dev: true
-
-  /vue-demi@0.12.5(vue@3.4.15):
-    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      vue: 3.4.15(typescript@5.3.3)
-    dev: false
 
   /vue-demi@0.14.6(vue@3.4.15):
     resolution: {integrity: sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==}

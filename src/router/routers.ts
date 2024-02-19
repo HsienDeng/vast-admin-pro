@@ -14,6 +14,7 @@ const routes = [
         path: '',
         meta: {
           title: '首页',
+          icon: 'home',
         },
         name: 'HomeView',
         component: () => import('@/views/home.vue'),
@@ -26,6 +27,7 @@ const routes = [
     component: Layout,
     meta: {
       title: '系统管理',
+      icon: 'system',
     },
     children: [
       {
@@ -33,6 +35,7 @@ const routes = [
         name: 'Menu',
         meta: {
           title: '菜单管理',
+          icon: 'application-menu',
         },
         component: () => import('@/views/system/menu-manager/index.vue'),
       },
@@ -41,6 +44,7 @@ const routes = [
         name: 'User',
         meta: {
           title: '用户管理',
+          icon: 'user',
         },
         component: () => import('@/views/system/user-manager/index.vue'),
       },
