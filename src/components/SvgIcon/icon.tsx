@@ -33,7 +33,7 @@ export default defineComponent({
     // 线条颜色, 没有设置就默认 currentColor
     color: {
       type: String,
-      default: 'none',
+      default: '',
     },
     // 图标大小
     size: {
@@ -51,7 +51,7 @@ export default defineComponent({
     });
 
     return () => (
-      <div class="svg-icon">
+      <div class={['svg-icon', !color.value && 'c-icon']}>
         <svg aria-hidden="true" key={svgKey.value} width={size.value} height={size.value}>
           <use xlinkHref={symbolId} stroke={color.value} fill={fill.value} />
         </svg>

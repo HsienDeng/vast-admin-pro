@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia';
 import { store } from '@/store';
+import { appThemeList } from '@/settings/designSetting.ts';
 
 interface DesignSettingState {
+  themeColor: string;
   // Menu collapsed
   collapsed: boolean;
   // Dark theme
@@ -16,6 +18,7 @@ export const useDesignSettingStore = defineStore({
   id: 'app-design-setting',
   state: (): DesignSettingState => {
     return {
+      themeColor: appThemeList[0],
       collapsed: false,
       darkTheme: false,
     };

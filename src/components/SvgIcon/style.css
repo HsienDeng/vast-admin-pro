@@ -1,7 +1,7 @@
 .svg-icon {
-  display: inline-block;
+  display: flex;
 }
 
-.svg-icon svg use {
+.c-icon svg use {
   stroke: currentColor;
 }
