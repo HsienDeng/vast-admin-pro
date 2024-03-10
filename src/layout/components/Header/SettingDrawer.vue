@@ -16,6 +16,7 @@
           v-for="(item, index) in appThemeList"
           :key="index"
           :style="{ 'background-color': item }"
+          @click="settingStore.setThemeColor(item)"
         >
           <div v-if="settingStore.themeColor === item">
             <SvgIcon name="check" color="#ffffff" />
@@ -30,13 +31,10 @@
   import { ref } from 'vue';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
   import { appThemeList } from '@/settings/designSetting.ts';
-
   import SvgIcon from '@/components/SvgIcon';
 
   const settingStore = useDesignSettingStore();
   const active = ref(false);
-
-  console.log(settingStore.themeColor);
 
   defineExpose({
     showDrawer: (bol: boolean) => (active.value = bol),

@@ -23,6 +23,29 @@ export const useDesignSettingStore = defineStore({
       darkTheme: false,
     };
   },
+  actions: {
+    /**
+     * Set theme color
+     * @param themeColor
+     */
+    setThemeColor(themeColor: string) {
+      this.themeColor = themeColor;
+    },
+    /**
+     * Set collapsed
+     * @param collapsed
+     */
+    setCollapsed(collapsed: boolean) {
+      this.collapsed = collapsed;
+    },
+    /**
+     * Set dark theme
+     * @param darkTheme
+     */
+    setDarkTheme(darkTheme: boolean) {
+      this.darkTheme = darkTheme;
+    },
+  },
   persist: {
     key: 'app-design-setting',
     storage: localStorage,

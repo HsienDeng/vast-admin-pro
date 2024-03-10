@@ -36,13 +36,24 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, watch } from 'vue';
   import SettingDrawer from './SettingDrawer.vue';
 
   import { useDesignSettingStore } from '@/store/modules/designSetting';
 
   const settingDrawer = ref<InstanceType<typeof SettingDrawer>>();
   const settingStore = useDesignSettingStore();
+
+  watch(
+    () => settingStore.themeColor,
+    (newVal) => {
+      console.log(newVal);
+      document.documentElement.style.setProperty('--theme-color', newVal);
+    },
+    {
+      immediate: true,
+    },
+  );
 
   // Toggle collapsed
   const toggleCollapsed = () => {
@@ -76,11 +87,7 @@
           transition: all 0.5s linear;
         }
         .icon-item:hover {
-          background-color: #e9f2ff;
-          color: #2080f0;
-          // :deep(svg use) {
-          //   stroke: #2080f0;
-          // }
+          color: var(--theme-color);
         }
       }
     }
