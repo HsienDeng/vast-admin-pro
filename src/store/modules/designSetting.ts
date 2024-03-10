@@ -26,7 +26,7 @@ export const useDesignSettingStore = defineStore({
   },
 });
 
-// With out use function
+// Without use function
 export function useDesignSettingWithOut() {
   return useDesignSettingStore(store);
 }

@@ -17,7 +17,7 @@
       :collapsed-width="64"
       show-trigger
       collapse-mode="width"
-      @update:collapsed="(event) => (designSetting.collapsed = event)"
+      @update:collapsed="(event: boolean) => (designSetting.collapsed = event)"
     >
       <LayoutSide :collapsed="designSetting.collapsed" />
     </n-layout-sider>

@@ -22,6 +22,16 @@ const routes = [
     ],
   },
   {
+    path: '/login',
+    name: 'Login',
+    meta: {
+      title: '登录',
+      icon: 'system',
+      hidden: true,
+    },
+    component: () => import('@/views/login/login.vue'),
+  },
+  {
     path: '/system',
     name: 'System',
     component: Layout,

@@ -22,7 +22,7 @@ function renderIcon(iconName: string) {
  */
 export function generatorMenu(routerMap: Array<any>) {
   return filterRouter(routerMap).map((item) => {
-    if (item.hidden) {
+    if (item.meta?.hidden) {
       return false;
     }
     const isRoot = isRootRouter(item);
