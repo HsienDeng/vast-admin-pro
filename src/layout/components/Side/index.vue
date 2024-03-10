@@ -1,5 +1,5 @@
 <template>
-  <Logo :collpased="collapsed" />
+  <Logo :collapsed="collapsed" />
   <n-menu
     :value="selectedKeys"
     :collapsed="collapsed"
