@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
   import LayoutSide from './components/Side/index.vue';
   import LayoutHeader from './components/Header/index.vue';
   import { layoutContentStyle, layoutHeaderStyle } from '@/settings/designSetting';
+  import { useDesignSettingStore } from '@/store/modules/designSetting';
 
   const designSetting = useDesignSettingStore();
 </script>

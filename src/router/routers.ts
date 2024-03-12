@@ -6,18 +6,31 @@ const routes = [
     path: '/',
   },
   {
-    path: '/dashboard/main',
-    name: '',
+    path: '/dashboard',
+    name: 'Dashboard',
+    meta: {
+      title: '中控台',
+      icon: 'dashboard',
+    },
     component: Layout,
     children: [
       {
-        path: '',
+        path: 'main',
         meta: {
-          title: '中控台',
-          icon: 'home',
+          title: '工作台',
+          icon: 'workbench',
         },
         name: 'DashboardMain',
         component: () => import('@/views/dashboard/main/index.vue'),
+      },
+      {
+        path: 'main',
+        meta: {
+          title: '监控台',
+          icon: 'console',
+        },
+        name: 'DashboardConsole',
+        component: () => import('@/views/dashboard/console/index.vue'),
       },
     ],
   },
