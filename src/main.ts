@@ -18,6 +18,7 @@ function boostrap() {
   /* 挂载pinia */
   setupStore(app);
 
+  /* router */
   app.use(router);
 
   app.mount('#app');

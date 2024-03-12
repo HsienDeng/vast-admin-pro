@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { darkTheme } from 'naive-ui';
-  // import type { GlobalThemeOverrides } from 'naive-ui';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { AppProvider } from '@/components/Application';
 
   const settingStore = useDesignSettingStore();
   // 深色主题切换
@@ -22,7 +22,9 @@
 
 <template>
   <NConfigProvider :theme="getTheme" :theme-overrides="themeOverrides">
-    <router-view />
+    <AppProvider>
+      <router-view />
+    </AppProvider>
   </NConfigProvider>
 </template>
 

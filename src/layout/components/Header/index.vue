@@ -47,7 +47,6 @@
   watch(
     () => settingStore.themeColor,
     (newVal) => {
-      console.log(newVal);
       document.documentElement.style.setProperty('--theme-color', newVal);
     },
     {

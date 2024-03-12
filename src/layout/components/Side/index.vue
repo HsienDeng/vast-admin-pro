@@ -1,5 +1,5 @@
 <template>
-  <Logo :collapsed="collapsed" />
+  <AppLogo :collapsed="collapsed" />
   <n-menu
     :value="selectedKeys"
     :collapsed="collapsed"
@@ -12,9 +12,9 @@
 <script setup lang="ts">
   import { ref } from 'vue';
   import { useRouter, useRoute } from 'vue-router';
-  import routes from '@/router/routers.ts';
   import { generatorMenu } from '@/adapter/menu.ts';
-  import Logo from './Logo';
+  import routes from '@/router/routers.ts';
+  import { AppLogo } from '@/components/Application';
 
   defineProps<{
     collapsed: boolean;

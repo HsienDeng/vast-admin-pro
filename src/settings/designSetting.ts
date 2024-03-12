@@ -1,3 +1,5 @@
+export const prefixCls = 'vast';
+
 // app theme preset color
 export const appThemeList: string[] = [
   '#2d8cf0',
