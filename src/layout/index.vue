@@ -2,9 +2,8 @@
   import { useDesignSettingStore } from '@/store/modules/designSetting';
   import LayoutSide from './components/Side/index.vue';
   import LayoutHeader from './components/Header/index.vue';
+  import { layoutContentStyle, layoutHeaderStyle } from '@/settings/designSetting';
 
-  const layoutHeaderStyle = 'height: 56px;';
-  const layoutContentStyle = 'padding: 10px; height:100%';
   const designSetting = useDesignSettingStore();
 </script>
 
@@ -15,7 +14,7 @@
       :native-scrollbar="false"
       bordered
       :collapsed-width="64"
-      show-trigger
+      show-trigger="bar"
       collapse-mode="width"
       @update:collapsed="(event: boolean) => (designSetting.collapsed = event)"
     >

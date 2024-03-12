@@ -4,15 +4,15 @@
  * @Software: WebStorm
 -->
 <template>
-  <n-flex justify="space-between" class="vast-header h-full">
+  <n-flex justify="space-between" :class="[prefixCls, 'h-full']">
     <!-- 左侧内容 -->
-    <div class="vast-content-left">
+    <div :class="`${prefixCls}-content-left`">
       <div class="collapse cursor-pointer" @click="toggleCollapsed">
         <SvgIcon :name="settingStore.collapsed ? 'menu-unfold' : 'menu-unfold-one'" />
       </div>
     </div>
     <!-- 右侧内容 -->
-    <div class="vast-content-right">
+    <div :class="`${prefixCls}-content-right`">
       <div class="functional-list-content">
         <n-flex justify="end">
           <div class="icon-item item">
@@ -23,6 +23,7 @@
           </div>
           <div class="item">
             <n-avatar src="https://i0.imgs.ovh/2024/02/17/oo6uv.png" />
+            <div class="name">Admin</div>
           </div>
           <div class="icon-item item" @click="showSettingDrawer">
             <SvgIcon name="setting" />
@@ -38,16 +39,20 @@
 <script setup lang="ts">
   import { ref, watch } from 'vue';
   import SettingDrawer from './SettingDrawer.vue';
-
   import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useDesign } from '@/hooks/useDesign';
 
-  const settingDrawer = ref<InstanceType<typeof SettingDrawer>>();
+  const { prefixCls } = useDesign('layou-header');
   const settingStore = useDesignSettingStore();
+  const settingDrawer = ref<InstanceType<typeof SettingDrawer>>();
 
+  /**
+   * 监听主题颜色变化，动态设置svg图标颜色
+   */
   watch(
     () => settingStore.themeColor,
-    (newVal) => {
-      document.documentElement.style.setProperty('--theme-color', newVal);
+    (nv) => {
+      document.documentElement.style.setProperty('--theme-color', nv);
     },
     {
       immediate: true,
@@ -56,7 +61,7 @@
 
   // Toggle collapsed
   const toggleCollapsed = () => {
-    settingStore.collapsed = !settingStore.collapsed;
+    settingStore.setCollapsed(!settingStore.collapsed);
   };
 
   // Show setting drawer
@@ -66,11 +71,13 @@
 </script>
 
 <style scoped lang="less">
-  .vast-header {
+  @prefix-cls: ~'@{namespace}-layou-header';
+
+  .@{prefix-cls} {
     padding: 0 25px 0 15px;
     align-items: center;
 
-    .vast-content-right {
+    &-content-right {
       cursor: pointer;
 
       .functional-list-content {
@@ -78,12 +85,18 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
+          .name {
+            margin-left: 10px;
+            font-size: 16px;
+          }
         }
+
         .icon-item {
           box-sizing: border-box;
           padding: 12px;
           border-radius: 8px;
-          transition: all 0.5s linear;
+          transition: all 0.3s linear;
         }
         .icon-item:hover {
           color: var(--theme-color);

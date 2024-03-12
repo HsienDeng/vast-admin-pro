@@ -1,9 +1,13 @@
 export const prefixCls = 'vast';
 
+export const layoutHeaderStyle = 'height: 56px;';
+
+export const layoutContentStyle = 'padding: 10px; height:100%';
+
 // app theme preset color
 export const appThemeList: string[] = [
   '#2d8cf0',
-  '#0960bd',
+  '#0054fe',
   '#0084f4',
   '#009688',
   '#536dfe',
@@ -21,7 +25,3 @@ export const appThemeList: string[] = [
   '#FB9300',
   '#FC5404',
 ];
-
-export default {
-  appThemeList,
-};
