@@ -1,9 +1,3 @@
-<!--
- * @Author: Coder Derek
- * @File: index.vue
- * @Software: WebStorm
- * @Description: descript
--->
 <template>
   <div>index</div>
 </template>

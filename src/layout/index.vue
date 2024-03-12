@@ -1,20 +1,24 @@
 <script setup lang="ts">
   import LayoutSide from './components/Side/index.vue';
   import LayoutHeader from './components/Header/index.vue';
-  import { layoutContentStyle, layoutHeaderStyle } from '@/settings/designSetting';
+  import { layoutHeaderStyle } from '@/settings/designSetting';
   import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useDesign } from '@/hooks/useDesign';
+
+  const { prefixCls } = useDesign('layout');
 
   const designSetting = useDesignSettingStore();
 </script>
 
 <template>
-  <n-layout has-sider position="absolute" class="h-full">
+  <n-layout has-sider position="absolute" :class="[prefixCls, 'h-full']">
     <n-layout-sider
+      :class="`${prefixCls}-sider`"
       :collapsed="designSetting.collapsed"
       :native-scrollbar="false"
       bordered
       :collapsed-width="64"
-      show-trigger="bar"
+      show-trigger
       collapse-mode="width"
       @update:collapsed="(event: boolean) => (designSetting.collapsed = event)"
     >
@@ -24,11 +28,23 @@
       <n-layout-header bordered :style="layoutHeaderStyle">
         <LayoutHeader />
       </n-layout-header>
-      <n-layout-content :content-style="layoutContentStyle" :native-scrollbar="false" bordered>
+      <n-layout-content embedded :native-scrollbar="false" bordered :class="`${prefixCls}-content`">
         <router-view />
       </n-layout-content>
     </n-layout>
   </n-layout>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="less">
+  @prefix-cls: ~'@{namespace}-layout';
+
+  .@{prefix-cls} {
+    color: red;
+
+    &-content {
+      padding: 16px;
+      height: calc(100% - 56px);
+      box-sizing: border-box;
+    }
+  }
+</style>

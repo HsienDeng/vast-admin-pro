@@ -99,7 +99,7 @@
           transition: all 0.3s linear;
         }
         .icon-item:hover {
-          color: var(--theme-color);
+          color: var(--n-item-icon-color);
         }
       }
     }
