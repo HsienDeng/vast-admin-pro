@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useDesignSettingStore } from '@/store/modules/projectSetting';
   import { appThemeList } from '@/settings/designSetting.ts';
   import SvgIcon from '@/components/SvgIcon';
 
@@ -62,3 +62,4 @@
     }
   }
 </style>
+@/store/modules/projectSetting

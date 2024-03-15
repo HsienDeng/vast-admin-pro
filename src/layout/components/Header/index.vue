@@ -39,7 +39,7 @@
 <script setup lang="ts">
   import { ref, watch } from 'vue';
   import SettingDrawer from './SettingDrawer.vue';
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useDesignSettingStore } from '@/store/modules/projectSetting';
   import { useDesign } from '@/hooks/useDesign';
 
   const { prefixCls } = useDesign('layou-header');
@@ -105,3 +105,4 @@
     }
   }
 </style>
+@/store/modules/projectSetting
