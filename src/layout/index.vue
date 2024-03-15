@@ -39,8 +39,6 @@
   @prefix-cls: ~'@{namespace}-layout';
 
   .@{prefix-cls} {
-    color: red;
-
     &-content {
       padding: 16px;
       height: calc(100% - 56px);

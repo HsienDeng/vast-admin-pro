@@ -1,7 +1,7 @@
 <template>
   <n-drawer v-model:show="active" :width="300">
     <n-drawer-content :title="$t('setting.title')" :native-scrollbar="false" closable>
-      <n-divider title-placement="center">深色模式</n-divider>
+      <n-divider title-placement="center">{{ $t('setting.theme') }}</n-divider>
       <n-flex justify="center">
         <n-switch v-model:value="settingStore.darkTheme" class="dark-theme-switch" size="large">
           <template #icon>
@@ -9,7 +9,7 @@
           </template>
         </n-switch>
       </n-flex>
-      <n-divider title-placement="center">主题颜色</n-divider>
+      <n-divider title-placement="center">{{ $t('setting.themeColor') }}</n-divider>
       <n-flex justify="center">
         <span
           class="theme-item flex justify-center align-center"

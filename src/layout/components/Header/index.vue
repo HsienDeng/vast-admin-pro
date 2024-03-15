@@ -122,11 +122,11 @@
           border-radius: 8px;
           transition: all 0.3s linear;
         }
+
         .icon-item:hover {
-          color: var(--n-item-icon-color);
+          color: var(--theme-color);
         }
       }
     }
   }
 </style>
-@/store/modules/projectSetting
