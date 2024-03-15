@@ -84,6 +84,7 @@
    * @param event
    */
   function toggleLocales(event: LANG_ENUM) {
+    // @ts-ignore
     i18n.global.locale.value = event;
     settingStore.setLang(event);
   }
