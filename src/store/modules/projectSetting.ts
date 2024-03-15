@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
 import { store } from '@/store';
 import { appThemeList } from '@/settings/designSetting.ts';
+import { LANG_ENUM } from '@/enum/lang';
 
-interface DesignSettingState {
+interface ProjectSettingState {
   // 当前语言
   lang: string;
   // 当前主题色
@@ -15,13 +16,17 @@ interface DesignSettingState {
 
 /**
  * Project setting store
- * @name useDesignSettingStore
+ * @name useProjectSettingStore
  */
-export const useDesignSettingStore = defineStore({
+export const useProjectSettingStore = defineStore({
   id: 'app-design-setting',
-  state: (): DesignSettingState => {
+  persist: {
+    key: 'app-design-setting',
+    storage: localStorage,
+  },
+  state: (): ProjectSettingState => {
     return {
-      lang: 'zh-cn',
+      lang: LANG_ENUM.Zh,
       themeColor: appThemeList[0],
       collapsed: false,
       darkTheme: false,
@@ -54,13 +59,9 @@ export const useDesignSettingStore = defineStore({
       this.lang = lang;
     },
   },
-  persist: {
-    key: 'app-design-setting',
-    storage: localStorage,
-  },
 });
 
 // Without use function
-export function useDesignSettingWithOut() {
-  return useDesignSettingStore(store);
+export function useProjectSettingWithOut() {
+  return useProjectSettingStore(store);
 }

@@ -8,7 +8,7 @@ import 'virtual:svg-icons-register';
 import { setupAppComponent } from '@/plugins';
 import router from '@/router';
 import { setupStore } from '@/store';
-import { setupLang } from '@/lang/setupLang';
+import { setupLocales } from '@/locales/setupLocales';
 
 function boostrap() {
   const app = createApp(App);
@@ -20,7 +20,7 @@ function boostrap() {
   setupStore(app);
 
   /* 挂载i18n */
-  setupLang(app);
+  setupLocales(app);
 
   /* router */
   app.use(router);

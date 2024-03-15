@@ -3,5 +3,5 @@
  */
 export enum LANG_ENUM {
   Zh = 'zh-cn',
-  En = 'en-us',
+  En = 'en',
 }

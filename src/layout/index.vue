@@ -2,12 +2,12 @@
   import LayoutSide from './components/Side/index.vue';
   import LayoutHeader from './components/Header/index.vue';
   import { layoutHeaderStyle } from '@/settings/designSetting';
-  import { useDesignSettingStore } from '@/store/modules/projectSetting';
+  import { useProjectSettingStore } from '@/store/modules/projectSetting';
   import { useDesign } from '@/hooks/useDesign';
 
   const { prefixCls } = useDesign('layout');
 
-  const designSetting = useDesignSettingStore();
+  const designSetting = useProjectSettingStore();
 </script>
 
 <template>
