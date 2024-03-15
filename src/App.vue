@@ -1,10 +1,11 @@
 <script setup lang="ts">
   import { computed } from 'vue';
   import { darkTheme } from 'naive-ui';
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useProjectSettingStore } from '@/store/modules/projectSetting';
   import { AppProvider } from '@/components/Application';
+  // import { zhCN, dateZhCN, enUS, dateEnUS } from 'naive-ui';
 
-  const settingStore = useDesignSettingStore();
+  const settingStore = useProjectSettingStore();
   // 深色主题切换
   const getTheme = computed(() => (settingStore.darkTheme ? darkTheme : undefined));
   // 主题颜色切换
@@ -19,7 +20,7 @@
     };
   });
 </script>
-
+<!-- :locale="enUS" :date-locale="dateEnUS" -->
 <template>
   <NConfigProvider :theme="getTheme" :theme-overrides="themeOverrides">
     <AppProvider>
@@ -33,3 +34,4 @@
     height: 100%;
   }
 </style>
+@/store/modules/projectSetting

@@ -2,22 +2,35 @@ const Layout = () => import('@/layout/index.vue');
 
 const routes = [
   {
-    redirect: '/home',
+    redirect: '/dashboard/main',
     path: '/',
   },
   {
-    path: '/home',
-    name: '',
+    path: '/dashboard',
+    name: 'Dashboard',
+    meta: {
+      title: '中控台',
+      icon: 'dashboard',
+    },
     component: Layout,
     children: [
       {
-        path: '',
+        path: 'main',
         meta: {
-          title: '首页',
-          icon: 'home',
+          title: '工作台',
+          icon: 'workbench',
         },
-        name: 'HomeView',
-        component: () => import('@/views/home.vue'),
+        name: 'DashboardMain',
+        component: () => import('@/views/dashboard/main/index.vue'),
+      },
+      {
+        path: 'main',
+        meta: {
+          title: '监控台',
+          icon: 'console',
+        },
+        name: 'DashboardConsole',
+        component: () => import('@/views/dashboard/console/index.vue'),
       },
     ],
   },

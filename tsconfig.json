@@ -21,11 +21,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
+      "@/*": ["./src/*"],
     },
-    "types": ["naive-ui/volar", "vite-plugin-svg-icons/client"]
+    "types": ["naive-ui/volar"],
   },
   "include": [
     "src/**/*.ts",
@@ -40,10 +38,6 @@
     "components.d.ts",
     "vite.config.ts",
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.js"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "**/*.js"],
+  "references": [{ "path": "./tsconfig.node.json" }],
 }

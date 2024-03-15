@@ -8,6 +8,7 @@ import 'virtual:svg-icons-register';
 import { setupAppComponent } from '@/plugins';
 import router from '@/router';
 import { setupStore } from '@/store';
+import { setupLocales } from '@/locales/setupLocales';
 
 function boostrap() {
   const app = createApp(App);
@@ -17,6 +18,9 @@ function boostrap() {
 
   /* 挂载pinia */
   setupStore(app);
+
+  /* 挂载i18n */
+  setupLocales(app);
 
   /* router */
   app.use(router);

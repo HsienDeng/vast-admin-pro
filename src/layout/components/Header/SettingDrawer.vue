@@ -1,7 +1,7 @@
 <template>
   <n-drawer v-model:show="active" :width="300">
-    <n-drawer-content title="项目通用设置" :native-scrollbar="false" closable>
-      <n-divider title-placement="center">深色模式</n-divider>
+    <n-drawer-content :title="$t('setting.title')" :native-scrollbar="false" closable>
+      <n-divider title-placement="center">{{ $t('setting.theme') }}</n-divider>
       <n-flex justify="center">
         <n-switch v-model:value="settingStore.darkTheme" class="dark-theme-switch" size="large">
           <template #icon>
@@ -9,7 +9,7 @@
           </template>
         </n-switch>
       </n-flex>
-      <n-divider title-placement="center">主题颜色</n-divider>
+      <n-divider title-placement="center">{{ $t('setting.themeColor') }}</n-divider>
       <n-flex justify="center">
         <span
           class="theme-item flex justify-center align-center"
@@ -29,11 +29,11 @@
 
 <script setup lang="ts">
   import { ref } from 'vue';
-  import { useDesignSettingStore } from '@/store/modules/designSetting';
+  import { useProjectSettingStore } from '@/store/modules/projectSetting';
   import { appThemeList } from '@/settings/designSetting.ts';
   import SvgIcon from '@/components/SvgIcon';
 
-  const settingStore = useDesignSettingStore();
+  const settingStore = useProjectSettingStore();
   const active = ref(false);
 
   defineExpose({
@@ -62,3 +62,4 @@
     }
   }
 </style>
+@/store/modules/projectSetting
