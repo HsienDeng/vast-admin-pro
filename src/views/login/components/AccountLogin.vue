@@ -28,6 +28,7 @@
 <script setup lang="ts">
   import { computed, reactive } from 'vue';
   import { useLoginState, StateEnum } from '../components/loginPreference';
+  import { useRouter } from 'vue-router';
 
   interface FormState {
     username: string;
@@ -35,6 +36,7 @@
     remember: boolean;
   }
 
+  const router = useRouter();
   const formState = reactive<FormState>({
     username: '',
     password: '',
@@ -42,7 +44,8 @@
   });
 
   const onFinish = (values: any) => {
-    console.log('Success:', values);
+    localStorage.setItem('token', JSON.stringify(values));
+    router.push('/');
   };
 
   // 判断是否显示当前组件

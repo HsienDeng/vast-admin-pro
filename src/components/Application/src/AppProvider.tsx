@@ -17,7 +17,7 @@ export default defineComponent({
     });
 
     return () => {
-      return <div>{slots.default && slots.default()}</div>;
+      return <>{slots.default && slots.default()}</>;
     };
   },
 });

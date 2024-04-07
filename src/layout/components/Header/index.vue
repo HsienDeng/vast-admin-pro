@@ -43,7 +43,7 @@
   import SettingDrawer from './SettingDrawer.vue';
   import { useProjectSettingStore } from '@/store/modules/projectSetting';
   import { useDesign } from '@/hooks/useDesign';
-  import { LANG_ENUM } from '@/enum/lang.ts';
+  import { LANG_ENUM } from '@/enums/lang.ts';
   import { i18n } from '@/locales/setupLocales.ts';
 
   const { prefixCls } = useDesign('layout-header');
@@ -69,7 +69,7 @@
       key: LANG_ENUM.Zh,
     },
     {
-      label: 'english',
+      label: 'English',
       key: LANG_ENUM.En,
     },
   ];
@@ -131,3 +131,4 @@
     }
   }
 </style>
+@/enums/lang
