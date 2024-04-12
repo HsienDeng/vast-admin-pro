@@ -5,28 +5,20 @@ body,
   margin: 0;
   padding: 0;
 }
-
 html,
 body {
   font-size: 16px;
 }
-
-// 浏览器自动填充的背景颜色去除
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition-delay: 99999s;
-  transition:
-    color 99999s ease-out,
-    background-color 99999s ease-out;
+  transition: color 99999s ease-out, background-color 99999s ease-out;
   -webkit-transition-delay: 99999s;
-  -webkit-transition:
-    color 99999s ease-out,
-    background-color 99999s ease-out;
+  -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
   -webkit-text-fill-color: #807c7c;
 }
-
 input:-internal-autofill-previewed,
 input:-internal-autofill-selected {
   -webkit-text-fill-color: black !important;

@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import { resolve } from 'path';
+import { viteMockServe } from 'vite-plugin-mock';
 
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -28,6 +29,9 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    viteMockServe({
+      mockPath: './mock/', //mock文件夹的路径
+    }),
     UnoCss({
       presets: [presetUno(), presetAttributify(), presetIcons()],
     }),

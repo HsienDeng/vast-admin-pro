@@ -62,4 +62,3 @@
     }
   }
 </style>
-@/store/modules/projectSetting

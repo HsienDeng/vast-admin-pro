@@ -1,6 +1,6 @@
 import type { App } from 'vue';
 import { createI18n } from 'vue-i18n';
-import { LANG_ENUM } from '@/enum/lang';
+import { LANG_ENUM } from '@/enums/lang';
 import { useProjectSettingStore } from '@/store/modules/projectSetting';
 import zhCn from './lang/zh-cn';
 import en from './lang/en';

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { store } from '@/store';
 import { appThemeList } from '@/settings/designSetting.ts';
-import { LANG_ENUM } from '@/enum/lang';
+import { LANG_ENUM } from '@/enums/lang';
 
 interface ProjectSettingState {
   // 当前语言
